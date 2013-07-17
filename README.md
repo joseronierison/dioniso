@@ -1,4 +1,4 @@
 dioniso
 =======
 
-Ferramenta de inserção HTML
+Ferramenta de inserção SQL
