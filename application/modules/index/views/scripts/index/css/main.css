@@ -1,0 +1,37 @@
+/* 
+    Document   : main
+    Created on : 16/07/2013, 13:43:28
+    Author     : José Roniérison
+    Description: Folha de estido da página incial
+*/
+
+.status-bar-title {
+     background-color: white;
+     width: 95px;
+     padding: 0px; 
+     margin-top: -17px; 
+     margin-left: -18px; 
+     border-bottom-width: thin; 
+     border-bottom-style: solid; 
+     border-bottom-color: silver; 
+     border-right-width: thin;
+     border-right-style: solid;
+     border-right-color: silver;
+}
+
+.text-info {
+    color: slateblue;
+}
+
+.text-error {
+    color: tomato;
+}
+
+.text-command {
+    background-color: black;
+    color: limegreen;
+}
+.text-success {
+    color: seagreen;
+}
+
