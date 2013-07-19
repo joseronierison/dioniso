@@ -1,11 +1,26 @@
 <?php
+
 /**
- * Controlador que faz a triagem dos dados para enviar módulo responsável pelo
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * * Controlador que faz a triagem dos dados para enviar módulo responsável pelo
  * melhor tratamento do ataque.
  * 
- * @author José Roniérison
- * @date 15.07.2013
+ * @category   Controllers
+ * @package    MySQL
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       15.07.2013
  */
+
 class Triagem_ClinicogeralController extends Zend_Controller_Action
 {
     public function init()

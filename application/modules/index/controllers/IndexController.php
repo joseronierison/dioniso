@@ -1,23 +1,32 @@
 <?php
-
 /**
- * Controlador de visualização da página principal.
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * * Controlador de visualização da página principal.
  * 
- * @author José Roniérison <ronierison.silva@gmail.com>
- * @data 14.07.2013
+ * @category   Controllers
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       14.07.2013
  */
+
 class Index_IndexController extends Zend_Controller_Action
 {
     public function init()
     {
         $this->view->js = array(
             array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-transition.js'),
-            array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-alert.js'),
-            array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-modal.js'),
-            array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-scrollspy.js'),
             array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-dropdown.js'),
             array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-tab.js'),
-            array('src' => 'public/twitter-bootstrap-v2.0.3/js/bootstrap-tooltip.js'),
             array('src' => 'application/modules/index/views/scripts/index/js/status-bar.js'),
             array('src' => 'application/modules/index/views/scripts/index/js/main-events.js'),
             array('src' => 'application/modules/index/views/scripts/index/js/mysql.js')
@@ -37,7 +46,7 @@ class Index_IndexController extends Zend_Controller_Action
     }
     
     /*
-     * Renderiza pÃ¡gina de login
+     * Renderiza pagina de login
      */
     public function indexAction()
     {

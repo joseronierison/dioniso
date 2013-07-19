@@ -1,12 +1,23 @@
 <?php
 /**
- * A classe abstrata Procurador_Estagiario_Abstract é responsável 
- * por armazenar o HTML original do site para fazer a comparação de ataque e
- * por localizar as coordenadas onde será encotrado os dados da injeção SQL.
- * 
- * @abstract  
- * @author José Roniérison
- * @date 14.07.2013
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * @abstract   A classe abstrata Procurador_Estagiario_Abstract é responsável 
+ *               por armazenar o HTML original do site para fazer a comparação de ataque e
+ *               por localizar as coordenadas onde será encotrado os dados da injeção SQL.
+ * @category   Models
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       14.07.2013
  */
 
 abstract class Procurador_Estagiario_Abstract extends Procurador_Estagiario_Aprendiz_Abstract {
