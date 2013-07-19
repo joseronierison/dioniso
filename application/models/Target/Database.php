@@ -1,13 +1,23 @@
 <?php
-
 /**
- * Classe de estrutura do banco de dados. Organizador de informações.
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * @final: Classe de estrutura do banco de dados. Organizador de informações.
  * Contém bancos, que por sua vez contém tabelas, que por sua vez contem 
  * a lista de colunas e suas informações.
- * 
- * @final
- * @author José Roniérison <ronierison.silva@gmail.com>
- * @date 14.07.2013
+ * @category   Models
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       14.07.2013
  */
 
 final class Target_Database

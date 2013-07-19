@@ -1,19 +1,22 @@
 <?php
-
-/* include Zend Session */
-require_once ('Zend/Session/Namespace.php');
-
-/* inicializando a sessao */
-//Zend_Session::start();
-//
-///* persistir a sessao por 1 mes */
-//Zend_Session::rememberMe(60 * 60 * 24 * 7 * 4);
-
-
-/*
- * Reporta todos os erros que ocorrerem :
- * Fase de desenvolvimento.
+/**
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * @category   Index
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       14.07.2013
  */
+
 error_reporting(E_ALL|E_STRICT);
 ini_set('display_errors',true);
 
@@ -25,22 +28,24 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', $ActualPath.'/applicat
 defined('ROOT_PATH') || define('ROOT_PATH', $ActualPath);
 defined('PUBLIC_PATH') || define('PUBLIC_PATH', $ActualPath);
 
-//temporário
-//defined('USER_DIR') || define('USER_DIR', 'application/data/users');
-
 /*
- *  Define o nivel da aplicaÃ§Ã£o
+ *  Define o nivel da aplicação
  */
 defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
 
-// Aqui são os include paths muito importante configuralos corretamente
+// Aqui são os includes paths.
 set_include_path(implode(PATH_SEPARATOR, array(
-    APPLICATION_PATH, //inclui o diretório da aplicaÃ§Ã£o
+    APPLICATION_PATH, //inclui o diretório da aplicação
+    APPLICATION_PATH.'/libs/Zend', // inclui arquivos do Zend
     APPLICATION_PATH.'/libs', //inclui o diretório da library
     APPLICATION_PATH.'/models', // inclui pasta dos models
     APPLICATION_PATH.'/views/helpers/',
     get_include_path(), //inclui os demais includes paths já pre definidos
 )));
+
+
+/* include Zend Session */
+require_once ('Zend/Session/Namespace.php');
 
 /*
  * Zend_Application
@@ -52,15 +57,9 @@ require_once "Zend/Loader/Autoloader.php";
 
 
 try{
-/*
- * Essa predefiniÃ§Ã£o Ã© muito importante pois ela nos permite utilizar um recurso bem legal, 
- *  nÃ£o precisamos mais utilizar require, require_once ou include em nossos objetos desde
- *  que sigamos uma estrutura de NameSpaces.
- *  Ver mais detalhes em: http://www.marcosborges.com/blog/?page_id=132#NameSpace
-*/
-    $autoloader = Zend_Loader_Autoloader::getInstance()->setFallbackAutoloader(true);
+   $autoloader = Zend_Loader_Autoloader::getInstance()->setFallbackAutoloader(true);
     
- // Cria a aplicaÃ§Ã£o, inicia e roda
+    // Cria a aplicação, inicia e roda
     $application = new Zend_Application( APPLICATION_ENV, APPLICATION_PATH.'/configs/application.ini' );
 
     $application->bootstrap();
@@ -76,12 +75,9 @@ try{
             'mysql' => APPLICATION_PATH.'/modules/mysql/controllers',
      ));
     
-    /*
-     * Request Class
-     */
-    //Zend_Debug::dump($_GET);
    
     $request = new Zend_Controller_Request_Http();
+    
     /*
      * Adiciona caminhoa para os helpers.
      */
@@ -95,19 +91,18 @@ try{
             ->setModuleName($UriAux[0])
             ->setControllerName($UriAux[1])
             ->setActionName($UriAux[2]);
-    //Zend_Debug::dump($request);
+    
     $frontController->throwExceptions(true); 
     
     
     $frontController->dispatch($request);
    
 }catch(Exception $exc){
-  //Zend_Debug::dump($exc);
   exit(Zend_Json::encode(array(
     'status' => false,
     'messages' => array(
         'type' => 'classe',
-        'label' => 'Mensagem de erro',
+        'label' => 'Erro',
         'message' => $exc->getMessage()
     )
   )));
