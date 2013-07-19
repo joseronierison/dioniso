@@ -63,7 +63,6 @@ try{
     $application = new Zend_Application( APPLICATION_ENV, APPLICATION_PATH.'/configs/application.ini' );
 
     $application->bootstrap();
-    //$application->run();
 
     $frontController = Zend_Controller_Front::getInstance();
 
