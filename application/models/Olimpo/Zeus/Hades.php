@@ -1,11 +1,23 @@
 <?php
 /**
- * Classe especializada em fazer busca de banco de tabelas no banco de dados
- * 
- * @abstract
- * @author José Roniérison <ronierison.silva@gmail.com>
- * @date 15.07.2013
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * @abstract   Classe especializada em fazer busca de banco de tabelas no banco de dados
+ * @category   Models
+ * @package    MySQL
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       15.07.2013
  */
+
 abstract class Olimpo_Zeus_Hades extends Olimpo_Zeus_Hades_Odim {
     
     /**

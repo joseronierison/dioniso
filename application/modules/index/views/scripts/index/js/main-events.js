@@ -1,5 +1,21 @@
-/*
- * Formulário form-ceifador
+/**
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * * Ações tomadas na página inicial
+ * 
+ * @category   Views
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       14.07.2013
  */
 
 // Ao clicar no botão ceifar, está função é executada.
@@ -13,7 +29,16 @@ $("#button-ceifar").click(function(){
     
     $("#button-ceifar").attr('class','btn btn-inverse');
     $("#button-ceifar").html('<i class="icon-remove icon-white"></i> Cancelar');
-    
+//    $.post(
+//        "?module=triagem&controller=clinicogeral&action=examespreliminares", 
+//        { 
+//            url : $("#input-target-url").val()
+//        }, 
+//        function(response) {            
+//            $('#div-modal-about').html(response);
+//            $('#div-modal-about').modal('show');
+//        } 
+//    );
     showLoadingModal();
     
     $.ajax({
