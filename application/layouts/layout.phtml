@@ -1,10 +1,28 @@
 <?php
+/**
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * Arquivo base de redenrização
+ * 
+ * @category   Views
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       15.07.2013
+ */
+
+
+
 $this->jQuery()
-     ->setLocalPath('public/jquery/Jquery.js')
-     //->setUiLocalPath('public/jquery/js/jquery-ui-1.8.20.custom.min.js')
-     //->addStylesheet('public/jquery/css/ui-lightness/jquery-ui-1.8.20.custom.css')
-     //->addJavascriptFile('public/jquery/js/jquery.ui.datepicker-pt-BR.js') <script type="text/javascript" src="public/jquery/Jquery.js"></script>
-     //->addJavascriptFile('public/jquery/plugins/jquery.maskedinput-1.1.4.pack.js');
+     ->setLocalPath('public/jquery/Jquery.js');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -20,32 +38,11 @@ $this->jQuery()
      *
      * Echo no Helper Zendx_JQuery
      * 
-     * **** Dá echo somente nos scripts externos e css's do ZendX
+     * * Dá echo somente nos scripts externos e css's do ZendX
      */
     echo $this->jQuery();
     ?><link href="public/twitter-bootstrap-v2.0.3/css/bootstrap.css" rel="stylesheet" type="text/css" title="Bootstrap" /><?
-    /**
-     * Introduz todos os arquivos de javascript informados no controlador no caberçalho
-     *
-     * @type        array
-     * @elements    type=string | define tipo do script informado
-     * @elements    src=string  | caminho para incluir o arquivos
-     */
 
-    /*------------------------------------
-     * Este elemente está sendo inserido aqui por força de algum erro no processamento do zend.
-     * Suponho que o repasse entre a view e o dispachado está sendo lento, não dando tempo para o 
-     * corpo html carregar os objetos da classe modal.
-     */
-    ?><script type="text/javascript" src="public/twitter-bootstrap-v2.0.3/js/bootstrap-modal.js"></script><?
-    if(is_array($this->headJs)){
-        foreach($this->headJs as $javascript){
-            $type = (isset($javascript['type'])? $javascript['type'] : 'text/javascript');
-            $code = (isset($javascript['code'])? $javascript['code'] : '');
-            $src = (isset($javascript['src'])? 'src="'.$javascript['src'].'"' : '');
-            echo '<script type="'.$type.'" '.$src.'>'.$code.'</script>';
-        }
-    }
 
     /**
      * Introduz todos os arquivos de css informados no controlador
@@ -65,16 +62,13 @@ $this->jQuery()
             echo '<link href="'.$css['href'].'" rel="'.$rel.'" type="'.$type.'" '.$title.'/>';
         }
     }
-
+    
 ?>
-
+<script type="text/javascript" src="public/twitter-bootstrap-v2.0.3/js/bootstrap-transition.js"></script>
+<script type="text/javascript" src="public/twitter-bootstrap-v2.0.3/js/bootstrap-modal.js"></script>
 <?= $this->layout()->content; ?>
     
 <?php
-/*
-     * Força o scripts onloads a serem dispejados na após scripts
-     */
-    echo $this->jQuery()->_renderExtras();
     /**
      * Introduz todos os arquivos de javascript informados no controlador
      *
@@ -91,6 +85,11 @@ $this->jQuery()
                 <script type="'.$type.'" '.$src.'>'.$code.'</script>';
         }
     }
+    /*
+     * Força o scripts onloads a serem dispejados na após scripts
+     */
+    echo $this->jQuery()->_renderExtras();
+
 ?>
 
 

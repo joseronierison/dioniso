@@ -1,4 +1,24 @@
 <?php
+/**
+ * Dioniso, Analysis tool safety
+ *
+ * LICENSE
+ *
+ * This source file is subject to the GNU General Public License that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ *
+ * Bootstrap do Zend Framework
+ * 
+ * @category   Views
+ * @package    Main
+ * @copyright  Copyright (c) 2013 José Roniérison <ronierison.silva@gmail.com>
+ * @license    http://www.gnu.org/licenses/gpl-3.0-standalone.html GPL v3
+ * @version    1.0
+ * @date       15.07.2013
+ */
+
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
@@ -22,32 +42,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         try{
 		$db = Zend_Db::factory($config->db);
 
-		// Registra o banco de dados
 		$registry = Zend_Registry::getInstance();
 		$registry->set('db', $db);
 
 		Zend_Db_Table::setDefaultAdapter($db);
 	}catch(Zend_Db_Exception $e){
-             //Zend_Debug::dump($e);
 		echo "Não foi possíel realizar a conexão com o banco de dados.< br/> ".$e->getMessage();
 		exit;
     	}
         
-        //ñ é para estar aqui
-        $this->_initAcl();
     }
     
-    /*
-     * Faz configurações referente aos logs
-     */
-    protected function _initLog()
-    {
-        
-    }
-    
-    /*
-     *
-     */
+   
     protected function _initView()
     {
         $view = new Zend_View ();
@@ -66,22 +72,5 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         Zend_Controller_Action_HelperBroker::addHelper ( $viewRenderer );
     }
 
-    /*
-     *
-     */
-    protected function _initAcl()
-    {
-        
-    }
-    
-    /*
-     * Inicializações referentes ao módule de autenticação
-     * 
-     * Funções:
-     */
-    protected function _initAuth()
-    {
-        
-    }
 }
 ?>
