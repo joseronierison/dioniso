@@ -112,7 +112,7 @@ try{
  */
 function TransformURI($Uri){
     $return = null;
-    //Zend_Debug::dump($Uri);
+    
     if(is_array($Uri)){
         if(isset($Uri['module'])){
             $return = '/'.strtolower($Uri['module']);
