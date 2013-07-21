@@ -24,6 +24,7 @@ ini_set('display_errors',true);
  *  Define as constantes do funcionamento do MVC
  */
 $ActualPath = realpath(dirname(__FILE__));
+
 defined('APPLICATION_PATH') || define('APPLICATION_PATH', $ActualPath.'/application');
 defined('ROOT_PATH') || define('ROOT_PATH', $ActualPath);
 defined('PUBLIC_PATH') || define('PUBLIC_PATH', $ActualPath);
@@ -36,7 +37,6 @@ defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV
 // Aqui são os includes paths.
 set_include_path(implode(PATH_SEPARATOR, array(
     APPLICATION_PATH, //inclui o diretório da aplicação
-    APPLICATION_PATH.'/libs/Zend', // inclui arquivos do Zend
     APPLICATION_PATH.'/libs', //inclui o diretório da library
     APPLICATION_PATH.'/models', // inclui pasta dos models
     APPLICATION_PATH.'/views/helpers/',

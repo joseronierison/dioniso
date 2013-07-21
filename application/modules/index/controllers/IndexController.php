@@ -50,7 +50,7 @@ class Index_IndexController extends Zend_Controller_Action
      */
     public function indexAction()
     {
-        $this->view->titulo = "Hacker Tool By José Roniérison";
+        $this->view->titulo = "Dioniso - Analysis tool safety :: By Jos&eacute; Roni&eacute;rison";
     }
     
     public function cancelarconsultaAction()

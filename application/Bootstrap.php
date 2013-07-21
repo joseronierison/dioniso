@@ -56,17 +56,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
    
     protected function _initView()
     {
-        $view = new Zend_View ();
+        //$view = new Zend_View ();
 
-        ZendX_JQuery::enableView( $view );
-        $viewrenderer = new Zend_Controller_Action_Helper_ViewRenderer();
-        $viewrenderer->setView( $view );
-        Zend_Controller_Action_HelperBroker::addHelper( $viewrenderer );
+        //ZendX_JQuery::enableView( $view );
+        //$viewrenderer = new Zend_Controller_Action_Helper_ViewRenderer();
+        //$viewrenderer->setView( $view );
+        //Zend_Controller_Action_HelperBroker::addHelper( $viewrenderer );
         
         $this->bootstrap ( "layout" );
         $layout = $this->getResource ( 'layout' );
         $view = $layout->getView ();
-        $view->addHelperPath ( 'ZendX/JQuery/View/Helper/', 'ZendX_JQuery_View_Helper' );
+       // $view->addHelperPath ( 'ZendX/JQuery/View/Helper/', 'ZendX_JQuery_View_Helper' );
         $viewRenderer = new Zend_Controller_Action_Helper_ViewRenderer ();
         $viewRenderer->setView ( $view );
         Zend_Controller_Action_HelperBroker::addHelper ( $viewRenderer );

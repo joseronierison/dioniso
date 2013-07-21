@@ -21,27 +21,14 @@
 
 
 
-$this->jQuery()
-     ->setLocalPath('public/jquery/Jquery.js');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="content-style-type" content="text/css" />
 <meta http-equiv="content-language" content="pt-br" />
-<title><? echo $this->titulo;  ?></title>    
-
-<?php
-    $this->jQuery()->enable();
-    /*
-     * Força a entrada do script JQuery
-     *
-     * Echo no Helper Zendx_JQuery
-     * 
-     * * Dá echo somente nos scripts externos e css's do ZendX
-     */
-    echo $this->jQuery();
-    ?><link href="public/twitter-bootstrap-v2.0.3/css/bootstrap.css" rel="stylesheet" type="text/css" title="Bootstrap" /><?
+<title><?= $this->titulo;  ?></title>    
+<link href="public/twitter-bootstrap-v2.0.3/css/bootstrap.css" rel="stylesheet" type="text/css" title="Bootstrap" /><?
 
 
     /**
@@ -64,6 +51,7 @@ $this->jQuery()
     }
     
 ?>
+<script type="text/javascript" src="public/jquery/Jquery.js"></script>
 <script type="text/javascript" src="public/twitter-bootstrap-v2.0.3/js/bootstrap-transition.js"></script>
 <script type="text/javascript" src="public/twitter-bootstrap-v2.0.3/js/bootstrap-modal.js"></script>
 <?= $this->layout()->content; ?>
@@ -85,10 +73,7 @@ $this->jQuery()
                 <script type="'.$type.'" '.$src.'>'.$code.'</script>';
         }
     }
-    /*
-     * Força o scripts onloads a serem dispejados na após scripts
-     */
-    echo $this->jQuery()->_renderExtras();
+    
 
 ?>
 
