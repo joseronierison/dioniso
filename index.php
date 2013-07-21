@@ -63,7 +63,6 @@ try{
     $application = new Zend_Application( APPLICATION_ENV, APPLICATION_PATH.'/configs/application.ini' );
 
     $application->bootstrap();
-    //$application->run();
 
     $frontController = Zend_Controller_Front::getInstance();
 
@@ -113,7 +112,7 @@ try{
  */
 function TransformURI($Uri){
     $return = null;
-    //Zend_Debug::dump($Uri);
+    
     if(is_array($Uri)){
         if(isset($Uri['module'])){
             $return = '/'.strtolower($Uri['module']);
